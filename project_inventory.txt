@@ -1,0 +1,68 @@
+===== DATE =====
+Sat Oct 17 08:03:04 PM PKT 2026
+
+===== MINIKUBE =====
+! Executing "docker container inspect minikube --format={{.State.Status}}" took an unusually long time: 7.217942473s
+* Restarting the docker service may improve performance.
+minikube
+type: Control Plane
+host: Running
+kubelet: Running
+apiserver: Running
+kubeconfig: Configured
+
+
+===== HELM RELEASES =====
+NAME      	NAMESPACE 	REVISION	UPDATED                                	STATUS  	CHART             	APP VERSION
+grafana   	monitoring	1       	2026-10-14 22:45:53.547684712 +0500 PKT	deployed	grafana-10.5.15   	12.3.1     
+prometheus	monitoring	1       	2026-10-14 22:26:23.413989459 +0500 PKT	deployed	prometheus-29.37.0	v3.15.0    
+
+===== ALL PODS =====
+NAMESPACE     NAME                                                 READY   STATUS    RESTARTS       AGE
+default       cpu-test-677f9bf49b-wgn8v                            1/1     Running   0              3h42m
+kube-system   coredns-559f6c778d-hnwbj                             1/1     Running   5 (21m ago)    25d
+kube-system   etcd-minikube                                        1/1     Running   4 (21m ago)    25d
+kube-system   kindnet-68wfr                                        1/1     Running   3 (21m ago)    25d
+kube-system   kube-apiserver-minikube                              1/1     Running   11 (21m ago)   25d
+kube-system   kube-controller-manager-minikube                     1/1     Running   12 (21m ago)   25d
+kube-system   kube-proxy-b5rp6                                     1/1     Running   3 (21m ago)    25d
+kube-system   kube-scheduler-minikube                              1/1     Running   5 (21m ago)    25d
+kube-system   metrics-server-768f9f6999-z95r2                      1/1     Running   38 (19m ago)   25d
+kube-system   storage-provisioner                                  1/1     Running   34 (19m ago)   25d
+monitoring    grafana-6675964f54-jfjgt                             1/1     Running   9 (21m ago)    2d21h
+monitoring    prometheus-alertmanager-0                            2/2     Running   46 (21m ago)   2d21h
+monitoring    prometheus-kube-state-metrics-54dc6d7965-c45rw       1/1     Running   36 (19m ago)   2d21h
+monitoring    prometheus-prometheus-node-exporter-hh97f            1/1     Running   20 (21m ago)   2d21h
+monitoring    prometheus-prometheus-pushgateway-588df6f948-bdfvl   1/1     Running   15 (21m ago)   2d21h
+monitoring    prometheus-server-9466947fb-qnm9z                    2/2     Running   25 (21m ago)   2d21h
+
+===== ALL DEPLOYMENTS =====
+NAMESPACE     NAME                                READY   UP-TO-DATE   AVAILABLE   AGE
+default       cpu-test                            1/1     1            1           3h42m
+kube-system   coredns                             1/1     1            1           25d
+kube-system   metrics-server                      1/1     1            1           25d
+monitoring    grafana                             1/1     1            1           2d21h
+monitoring    prometheus-kube-state-metrics       1/1     1            1           2d21h
+monitoring    prometheus-prometheus-pushgateway   1/1     1            1           2d21h
+monitoring    prometheus-server                   1/1     1            1           2d21h
+
+===== MONITORING SERVICES =====
+NAME                                  TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)    AGE
+grafana                               ClusterIP   10.111.218.22   <none>        80/TCP     2d21h
+prometheus-alertmanager               ClusterIP   10.97.244.47    <none>        9093/TCP   2d21h
+prometheus-alertmanager-headless      ClusterIP   None            <none>        9093/TCP   2d21h
+prometheus-kube-state-metrics         ClusterIP   10.103.253.39   <none>        8080/TCP   2d21h
+prometheus-prometheus-node-exporter   ClusterIP   10.98.132.42    <none>        9100/TCP   2d21h
+prometheus-prometheus-pushgateway     ClusterIP   10.107.78.109   <none>        9091/TCP   2d21h
+prometheus-server                     ClusterIP   10.107.4.119    <none>        80/TCP     2d21h
+
+===== PROJECT FILES =====
+./project_inventory.txt
+./energy_cpu_test.py
+./energy_test.py
+./.energy_test.py.swp
+
+===== EXISTING ENERGY RESULTS =====
+total 8.0K
+-rw-rw-r-- 1 gulfatima gulfatima  980 Oct 17 19:57 cpu_loaded_20261017_195557.csv
+-rw-rw-r-- 1 gulfatima gulfatima 2.0K Oct 17 15:58 emissions.csv

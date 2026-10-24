@@ -1,0 +1,2 @@
+timestamp,node,cpu_cores,cpu_percent,memory,memory_percent
+2026-10-18T00:23:38,minikube,1360m,68,1250Mi,37
